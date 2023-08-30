@@ -6,77 +6,190 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> hehe</h1>
-    <p> braaaaaa</p>
-    <p>heahehhahrhverqveaiu</p>
-    <form>
+  <style>
 
-        <label for="projektname">Projektname:</label>
-      
-        <input type="text" id="projektname" name="projektname">
-      
-       
-      
-        <label for="projektbeschreibung">Projektbeschreibung:</label>
-      
-        <textarea id="projektbeschreibung" name="projektbeschreibung"></textarea>
-      
-       
-      
-        <label for="github">Github.com-Projekt:</label>
-      
-        <select id="github" name="github">
-      
-          <option value="ja">Ja</option>
-      
-          <option value="nein">Nein</option>
-      
-        </select>
-      
-       
-      
-        <label for="jfrog">Jfrog/Artifactory:</label>
-      
-        <select id="jfrog" name="jfrog">
-      
-          <option value="ja">Ja</option>
-      
-          <option value="nein">Nein</option>
-      
-        </select>
-      
-       
-      
-        <label for="stages">Stages:</label>
-      
-        <input type="checkbox" id="dev" name="stages" value="dev">
-      
-        <label for="dev">Dev</label>
-      
-        <input type="checkbox" id="test" name="stages" value="test">
-      
-        <label for="test">Test</label>
-      
-        <input type="checkbox" id="prod" name="stages" value="prod">
-      
-        <label for="prod">Prod</label>
-      
-       
-      
-        <label for="zugriff">Zugriff von außerhalb:</label>
-      
-        <input type="radio" id="ja" name="zugriff" value="ja">
-      
-        <label for="ja">Ja</label>
-      
-        <input type="radio" id="nein" name="zugriff" value="nein">
-      
-        <label for="nein">Nein</label>
-      
-       
-      
-        <input type="submit" value="Senden">
-      
-      </form>
+    * {
+  
+      box-sizing: border-box;
+  
+    }
+  
+   
+  
+    form {
+  
+      max-width: 400px;
+  
+      margin: 0 auto;
+  
+    }
+  
+   
+  
+    label {
+  
+      display: block;
+  
+      margin-bottom: 5px;
+  
+      font-weight: bold;
+  
+    }
+  
+   
+  
+    input[type="text"],
+  
+    textarea {
+  
+      width: 100%;
+  
+      padding: 10px;
+  
+      margin-bottom: 10px;
+  
+      border: 1px solid #ccc;
+  
+      border-radius: 4px;
+  
+    }
+  
+   
+  
+    select {
+  
+      width: 100%;
+  
+      padding: 10px;
+  
+      margin-bottom: 10px;
+  
+      border: 1px solid #ccc;
+  
+      border-radius: 4px;
+  
+    }
+  
+   
+  
+    input[type="checkbox"],
+  
+    input[type="radio"] {
+  
+      margin-left: 5px;
+  
+    }
+  
+   
+  
+    input[type="submit"] {
+  
+      width: 100%;
+  
+      padding: 10px;
+  
+      background-color: #4CAF50;
+  
+      color: white;
+  
+      border: none;
+  
+      border-radius: 4px;
+  
+      cursor: pointer;
+  
+    }
+  
+  </style>
+  
+   
+  
+  <form method="post" action="send_mail.php">
+  
+    <label for="projektname">Projektname:</label>
+  
+    <input type="text" id="projektname" name="projektname" required>
+  
+   
+  
+    <label for="projektbeschreibung">Projektbeschreibung:</label>
+  
+    <textarea id="projektbeschreibung" name="projektbeschreibung" required></textarea>
+  
+   
+  
+    <label for="github">Github.com-Projekt:</label>
+  
+    <select id="github" name="github" required>
+  
+      <option value="">Bitte wählen</option>
+  
+      <option value="ja">Ja</option>
+  
+      <option value="nein">Nein</option>
+  
+    </select>
+  
+   
+  
+    <label for="jfrog">Jfrog/Artifactory:</label>
+  
+    <select id="jfrog" name="jfrog" required>
+  
+      <option value="">Bitte wählen</option>
+  
+      <option value="ja">Ja</option>
+  
+      <option value="nein">Nein</option>
+  
+    </select>
+  
+   
+  
+    <label for="stages">Stages:</label>
+  
+    <div>
+  
+      <input type="checkbox" id="dev" name="stages[]" value="dev">
+  
+      <label for="dev">Dev</label>
+  
+   
+  
+      <input type="checkbox" id="test" name="stages[]" value="test">
+  
+      <label for="test">Test</label>
+  
+   
+  
+      <input type="checkbox" id="prod" name="stages[]" value="prod">
+  
+      <label for="prod">Prod</label>
+  
+    </div>
+  
+   
+  
+    <label for="zugriff">Zugriff von außerhalb:</label>
+  
+    <div>
+  
+      <input type="radio" id="ja" name="zugriff" value="ja" required>
+  
+      <label for="ja">Ja</label>
+  
+   
+  
+      <input type="radio" id="nein" name="zugriff" value="nein" required>
+  
+      <label for="nein">Nein</label>
+  
+    </div>
+  
+   
+  
+    <input type="submit" value="Senden">
+  
+  </form>
 </body>
 </html>
